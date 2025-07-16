@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<h2>Lista de tarefas</h2>
+
+<!-- formulario de busca -->
+
+<div class="search-container">
+    <form action="{{ url_for('index')}}">
+        <input
+            type="text"
+            name="search"
+            placeholder="Pesquisar tarefas..."
+            value="{{ request.args.get('search', '') }}"
+        />
+
+        <button type="submit" class="btn">Buscar</button>
+        {% if request.args.get('search') %}
+            <a href="{{ url_for('index') }}" class="btn btn-clear">Limpar</a>
+        {% endif %}
+    </form>
+    
+</div>
+
+
+<!-- Tabela das tarefas -->
+
+<div class="task-container">
+    <table class="task-table">
+
+        <thead>
+           <tr>
+            <th>Título</th>
+                <th>Descrição</th>
+                <th>Status</th>
+                <th>Ações</th>
+           </tr>
+        </thead>
+
+        <tbody>
+            {% for task in tasks %}
+
+                <tr>
+                    <td class="{% if task.status == 1 %}text-risk{% endif %}">{{ task.title }}</td>
+                    <td class="{% if task.status == 1 %}text-risk{% endif %}">{{ task.description[:50] }} {% if task.description|length > 50 %}...{% endif %}</td>
+                    <td>
+                        <span class="{% if task.status == 1 %} status-completed {% else %} status-pending {% endif %}">
+                            {% if task.status %} Concluído {% else %} Pendente {% endif %}
+                        </span>
+                    </td>
+                    <td class="actions-container">
+                        <form action="{{ url_for('toggle_status', task_id = task.id) }}" method="post">
+                            <button type="submit" class="btn btn-status" >
+                                {% if task.status %} Reabrir {% else %} Finalizar {% endif %}
+                            </button>
+                        </form>
+                        <a href="{{ url_for('edit_task', task_id = task.id) }}"
+                            class="btn btn-edit" >
+                            Editar
+                        </a>
+                        <form action="{{ url_for('delete_task', task_id = task.id) }}" method="post">
+                            <button type="submit" class="btn btn-delete">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+
+{% endblock%}

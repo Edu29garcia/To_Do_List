@@ -1,0 +1,25 @@
+<!-- Usei o _ no idicio pra indicar que é um componente de pagina -->
+
+<form method="post" class="task-form">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        {{ form.title.label(class = "form-label") }}
+        {{ form.title(class = "form-input") }}
+    </div>
+
+     <div class="form-group">
+        {{ form.description.label(class = "form-label") }}
+        {{ form.description(class = "form-textarea", rows = 3) }}
+    </div>
+
+     <div class="form-group checkbox-group">
+        {{ form.status.label(class = "form-label") }}
+        {{ form.status(class = "form-checkbox") }}
+    </div>
+
+     <div class="form-group form-center">
+       <input type="submit" class="btn btn-submit" value="Salvar">
+    </div>
+
+</form>

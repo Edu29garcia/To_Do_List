@@ -1,0 +1,236 @@
+/* CSS GLOBAL */
+
+body{
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #007bff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav h1{
+    color: #FFF;
+    text-decoration: underline;
+}
+
+nav a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px 0px #ccc;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Flash messages */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.flash.success {
+    background-color: #d4edda ;
+    color: #155724;
+}
+
+.flash.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Formulario de busca */
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-container form{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-container input{
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+}
+
+.btn-clear {
+    background-color: #dc3545;
+    color: #FFF ;
+}
+
+.btn-clear:hover{
+    background-color: #b02a37;
+}
+
+/* Tabela de tarefas */
+.task-container{
+    width: 100%;
+    margin: auto;
+}
+
+.task-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task-table th,
+.task-table td{
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.task-table th{
+    background-color: #007bff;
+    color: #FFF;
+    text-align: center;
+}
+
+.task-table tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+.text-risk {
+    text-decoration: line-through;
+    color: #808080;
+}
+
+.status-completed {
+    font-weight: bold;
+    color: #28a745;
+}
+
+.status-pending{
+    font-weight: bold;
+    color: #dc3545;
+}
+
+.actions-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-status{
+    background-color: #007bff;
+    color: #FFF;
+}
+
+.btn-status:hover {
+    background-color: #0056b3;
+}
+
+.btn-edit{
+    background-color: #f39c12;
+    color: #FFF;
+}
+
+.btn-edit:hover {
+    background-color: #d63910;
+}
+
+.btn-delete{
+    background-color: #dc3545;
+    color: #FFF;
+}
+
+.btn-delete:hover {
+    background-color: #b02a37;
+}
+
+
+
+/* Formularios */
+
+.task-form{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px 0px #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group label {
+    margin: 0;
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: #FFF;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
